@@ -21,7 +21,7 @@ public class Board {
     private String content;
 
     //@JoinColumn(name = "user_id")
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZYgit add .cascade = )
     private User user; // db -> user_id
 
     @CreationTimestamp // pc -> db (날짜주입)

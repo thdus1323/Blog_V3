@@ -38,9 +38,10 @@ public class BoardController {
 
     @GetMapping("/" )
     public String index(HttpServletRequest request) {
+        List<Board> boardList = boardRepository.findAll();
+        request.setAttribute("boardList", boardList);
         return "index";
     }
-
     @GetMapping("/board/save-form")
     public String saveForm() {
         return "board/save-form";

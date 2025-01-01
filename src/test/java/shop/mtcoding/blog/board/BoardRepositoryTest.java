@@ -27,9 +27,13 @@ class BoardRepositoryTest {
         System.out.println(board.getUser().getUsername());
     }
 
+    @Transactional
     @Test
     public void findAll_test() {
         List<Board> boardList = boardRepository.findAll();
+        boardList.forEach(board -> {
+            System.out.println(board.getUser().getUsername());
+        });
     }
 
 }
